@@ -1,0 +1,32 @@
+<form [formGroup]="loginForm" novalidate>
+
+  <label for="email">Email</label><br>
+  <input type="email" formControlName="email" class="input" [class.is-success]="email.valid"><br>
+
+
+
+  <label for="username">Username</label><br>
+  <input type="username" formControlName="username" class="input"><br>
+
+
+  <div *ngIf="username.invalid && username.dirty" class="notification is-danger">
+    <strong>{{ username.value }}</strong> is already taken
+  </div>
+
+  <div *ngIf="username.valid" class="notification is-success">
+    <strong>{{ username.value }}</strong> is available
+  </div>
+
+  <div *ngIf="username.pending" class="notification is-info">
+    Hold tight... Checking availability of <strong>{{ username.value }}</strong>
+  </div>
+  
+
+  <button class="button is-success" 
+          type="submit"
+          [disabled]="!loginForm.valid">
+
+    Register
+
+  </button>
+</form>
