@@ -1,6 +1,6 @@
-# Episode XY
+# Episode 87
 
-Watch the [screencast]()
+Watch the [screencast](https://angularfirebase.com)
 
 ## Usage
 
